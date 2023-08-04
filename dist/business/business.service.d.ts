@@ -1,13 +1,13 @@
-import { CreateBusinessDto, addUsertoBusinessDto } from './dto/create-business.dto';
-import { UpdateBusinessDto } from './dto/update-business.dto';
-import { BusinessEntity } from './entities/business.entity';
-import { Repository } from 'typeorm';
-import { BusinessRole } from './entities/business-role.entity';
-import { RoleService } from 'src/role/role.service';
-import { BusinessUser } from './entities/business-user.entity';
-import { UserService } from 'src/user/user.service';
-import { RolePermission } from 'src/permission/entities/role.permission.entity';
-import { BusinessUserRepository } from './entities/business-user.repository';
+import { CreateBusinessDto, addUsertoBusinessDto } from "./dto/create-business.dto";
+import { UpdateBusinessDto } from "./dto/update-business.dto";
+import { BusinessEntity } from "./entities/business.entity";
+import { Repository } from "typeorm";
+import { BusinessRole } from "./entities/business-role.entity";
+import { RoleService } from "src/role/role.service";
+import { BusinessUser } from "./entities/business-user.entity";
+import { UserService } from "src/user/user.service";
+import { RolePermission } from "src/permission/entities/role.permission.entity";
+import { BusinessUserRepository } from "./entities/business-user.repository";
 export declare class BusinessService {
     private readonly businessRepo;
     private readonly businessRoleRepo;
@@ -26,7 +26,7 @@ export declare class BusinessService {
     finallbusinessUser(): Promise<any>;
     findOneBusinessByid(businessId: number): Promise<any>;
     findAll(): Promise<BusinessEntity[]>;
-    findOne(id: number): string;
+    findOne(id: number): Promise<BusinessEntity>;
     update(id: number, updateBusinessDto: UpdateBusinessDto): string;
     remove(id: number): string;
     removss(id: number): string;

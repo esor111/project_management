@@ -3,10 +3,12 @@ import {registerUserDto } from './dto/create-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
+import { UserRepository } from './user.repository';
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(User) private readonly userRepo: Repository<User>,
+    // private readonly userRepo: UserRepository
   ) {}
 
   async registerUser(user: registerUserDto, pass: string): Promise<any> {

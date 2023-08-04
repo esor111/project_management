@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserRepository = void 0;
+exports.BusinessTeamRepository = void 0;
 const decorators_1 = require("@nestjs/common/decorators");
 const typeorm_1 = require("typeorm");
-const user_entity_1 = require("./entities/user.entity");
-let UserRepository = exports.UserRepository = class UserRepository extends typeorm_1.Repository {
+const business_team_entity_1 = require("./business-team.entity");
+let BusinessTeamRepository = exports.BusinessTeamRepository = class BusinessTeamRepository extends typeorm_1.Repository {
     constructor(dataSource) {
-        super(user_entity_1.User, dataSource.createEntityManager());
+        super(business_team_entity_1.BusinessTeam, dataSource.createEntityManager());
     }
 };
-exports.UserRepository = UserRepository = __decorate([
+exports.BusinessTeamRepository = BusinessTeamRepository = __decorate([
     (0, decorators_1.Injectable)(),
     __metadata("design:paramtypes", [typeorm_1.DataSource])
-], UserRepository);
-//# sourceMappingURL=user.repository.js.map
+], BusinessTeamRepository);
+//# sourceMappingURL=business-team.repository.js.map

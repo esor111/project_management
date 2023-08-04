@@ -10,3 +10,36 @@ export class CreateTeamDto {
    @IsNotEmpty()
    description: string;
 }
+
+
+export class TeammemberDto{
+   @ApiProperty()
+   public userId: number
+}
+
+export class TeamMemberDto{
+   @ApiProperty()
+   public teamId: number
+
+   @ApiProperty()
+   public businessId: number
+
+
+   @ApiProperty({type:[TeammemberDto]})
+   public member: TeammemberDto[]
+
+}
+
+export class CreateBusinessTeamDto{
+   @ApiProperty({type:[TeamMemberDto]})
+   public businessteam:TeamMemberDto[]
+}
+
+
+// export class CreateBusinessTeamDto {
+//    @ApiProperty()
+//    public businessId: number;
+ 
+//    @ApiProperty()
+//    public team: string;
+//  }

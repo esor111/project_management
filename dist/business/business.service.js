@@ -37,7 +37,7 @@ let BusinessService = exports.BusinessService = class BusinessService {
         const user = await this.userservice.findOneById3(userId);
         const role = await this.roleService.findAdmin();
         if (!role) {
-            throw new common_1.HttpException('role not found', 404);
+            throw new common_1.HttpException("role not found", 404);
         }
         let createdbusiness = this.businessRepo.create(createBusinessDto);
         let business = await this.businessRepo.save(createdbusiness);
@@ -51,24 +51,24 @@ let BusinessService = exports.BusinessService = class BusinessService {
         const { businessId, rollid } = adduser;
         const user = await this.userservice.findOneById3(userId);
         if (!user) {
-            throw new common_1.HttpException('user not found', 404);
+            throw new common_1.HttpException("user not found", 404);
         }
         const addedBy = await this.userservice.findOneById3(clientId);
         const business = await this.businessRepo.findOne({
             where: { id: businessId },
         });
         if (!business) {
-            throw new common_1.HttpException('business not found', 404);
+            throw new common_1.HttpException("business not found", 404);
         }
         const role = await this.roleService.findOne(rollid);
         if (!role) {
-            throw new common_1.HttpException('role not found', 404);
+            throw new common_1.HttpException("role not found", 404);
         }
         const rolepermission = await this.rolepermissionRepo.findOne({
             where: { role: { id: role.id } },
         });
         if (!rolepermission) {
-            throw new common_1.HttpException('rolepermission not found', 404);
+            throw new common_1.HttpException("rolepermission not found", 404);
         }
         const businessuser = await this.businessuserRepo.save({
             business,
@@ -91,8 +91,8 @@ let BusinessService = exports.BusinessService = class BusinessService {
     findAll() {
         return this.businessRepo.find();
     }
-    findOne(id) {
-        return `This action returns a #${id} business`;
+    async findOne(id) {
+        return await this.businessRepo.findOne({ where: { id: id } });
     }
     update(id, updateBusinessDto) {
         return `This action updates a #${id} business`;

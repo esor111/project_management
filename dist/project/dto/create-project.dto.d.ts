@@ -4,3 +4,9 @@ export declare class CreateProjectDto {
     startDate: Date;
     endDate: Date;
 }
+export declare class ProjectTeam {
+    teamId: number;
+}
+export declare class addProjectTeamDto {
+    projectteamId: number[];
+}

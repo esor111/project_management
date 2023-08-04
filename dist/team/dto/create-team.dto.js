@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTeamDto = void 0;
+exports.CreateBusinessTeamDto = exports.TeamMemberDto = exports.TeammemberDto = exports.CreateTeamDto = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CreateTeamDto {
@@ -25,4 +25,33 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateTeamDto.prototype, "description", void 0);
+class TeammemberDto {
+}
+exports.TeammemberDto = TeammemberDto;
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", Number)
+], TeammemberDto.prototype, "userId", void 0);
+class TeamMemberDto {
+}
+exports.TeamMemberDto = TeamMemberDto;
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", Number)
+], TeamMemberDto.prototype, "teamId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", Number)
+], TeamMemberDto.prototype, "businessId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ type: [TeammemberDto] }),
+    __metadata("design:type", Array)
+], TeamMemberDto.prototype, "member", void 0);
+class CreateBusinessTeamDto {
+}
+exports.CreateBusinessTeamDto = CreateBusinessTeamDto;
+__decorate([
+    (0, swagger_1.ApiProperty)({ type: [TeamMemberDto] }),
+    __metadata("design:type", Array)
+], CreateBusinessTeamDto.prototype, "businessteam", void 0);
 //# sourceMappingURL=create-team.dto.js.map

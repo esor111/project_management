@@ -9,30 +9,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateProjectDto = void 0;
+exports.addProjectTeamDto = exports.ProjectTeam = exports.CreateProjectDto = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CreateProjectDto {
 }
 exports.CreateProjectDto = CreateProjectDto;
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'tanka sadak', default: 'Default Project' }),
+    (0, swagger_1.ApiProperty)({ example: "tanka sadak", default: "Default Project" }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProjectDto.prototype, "projectName", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Description of the project', default: 'Default Description' }),
+    (0, swagger_1.ApiProperty)({
+        example: "Description of the project",
+        default: "Default Description",
+    }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProjectDto.prototype, "projectDescription", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '2023-08-01', default: new Date().toISOString().split('T')[0] }),
+    (0, swagger_1.ApiProperty)({
+        example: "2023-08-01",
+        default: new Date().toISOString().split("T")[0],
+    }),
     (0, class_validator_1.IsDate)(),
     __metadata("design:type", Date)
 ], CreateProjectDto.prototype, "startDate", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '2023-08-10', default: new Date().toISOString().split('T')[0] }),
+    (0, swagger_1.ApiProperty)({
+        example: "2023-08-10",
+        default: new Date().toISOString().split("T")[0],
+    }),
     (0, class_validator_1.IsDate)(),
     __metadata("design:type", Date)
 ], CreateProjectDto.prototype, "endDate", void 0);
+class ProjectTeam {
+}
+exports.ProjectTeam = ProjectTeam;
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", Number)
+], ProjectTeam.prototype, "teamId", void 0);
+class addProjectTeamDto {
+}
+exports.addProjectTeamDto = addProjectTeamDto;
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsInt)({ each: true }),
+    __metadata("design:type", Array)
+], addProjectTeamDto.prototype, "projectteamId", void 0);
 //# sourceMappingURL=create-project.dto.js.map
