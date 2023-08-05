@@ -13,7 +13,8 @@ export declare class TeamService {
     private readonly teamRepo;
     private readonly businessTeamRepo;
     private readonly businessteammemberrepository;
-    constructor(businessservice: BusinessService, userservice: UserService, teamRepo: TeamRepository, businessTeamRepo: BusinessTeamRepository, businessteammemberrepository: BusinessTeamMemberRepository);
+    private teammemberrepository;
+    constructor(businessservice: BusinessService, userservice: UserService, teamRepo: TeamRepository, businessTeamRepo: BusinessTeamRepository, businessteammemberrepository: BusinessTeamMemberRepository, teammemberrepository: BusinessTeamMemberRepository);
     createTeam(createTeamDto: CreateTeamDto): Promise<Team>;
     getAllTeams(): Promise<Team[]>;
     addBusinessTeam(teamDto: CreateBusinessTeamDto): Promise<any>;

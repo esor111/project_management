@@ -43,4 +43,12 @@ export class addProjectTeamDto {
   public projectteamId:number[]
 }
 
+
+export class addTeamMemberDto {
+
+  @ApiProperty()
+  @IsArray()
+  @IsInt({each: true})
+  public userId:number[]
+}
 // export class CreateProjectDto {}

@@ -18,12 +18,13 @@ const business_team_repository_1 = require("./entities/business-team.repository"
 const business_team_member_repository_1 = require("../business/entities/business-team-member.repository");
 const user_service_1 = require("../user/user.service");
 let TeamService = exports.TeamService = class TeamService {
-    constructor(businessservice, userservice, teamRepo, businessTeamRepo, businessteammemberrepository) {
+    constructor(businessservice, userservice, teamRepo, businessTeamRepo, businessteammemberrepository, teammemberrepository) {
         this.businessservice = businessservice;
         this.userservice = userservice;
         this.teamRepo = teamRepo;
         this.businessTeamRepo = businessTeamRepo;
         this.businessteammemberrepository = businessteammemberrepository;
+        this.teammemberrepository = teammemberrepository;
     }
     async createTeam(createTeamDto) {
         const { name, description } = createTeamDto;
@@ -79,6 +80,7 @@ exports.TeamService = TeamService = __decorate([
         user_service_1.UserService,
         team_repository_1.TeamRepository,
         business_team_repository_1.BusinessTeamRepository,
+        business_team_member_repository_1.BusinessTeamMemberRepository,
         business_team_member_repository_1.BusinessTeamMemberRepository])
 ], TeamService);
 //# sourceMappingURL=team.service.js.map

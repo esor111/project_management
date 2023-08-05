@@ -12,7 +12,7 @@ import { CreateBusinessTeamDto, CreateTeamDto } from "./dto/create-team.dto";
 import { UpdateTeamDto } from "./dto/update-team.dto";
 import { Team } from "./entities/team.entity";
 import { ApiTags } from "@nestjs/swagger";
-import { addProjectTeamDto } from "src/project/dto/create-project.dto";
+import { addProjectTeamDto, addTeamMemberDto } from "src/project/dto/create-project.dto";
 
 @ApiTags("teams")
 @Controller("team")
@@ -42,6 +42,15 @@ export class TeamController {
   ): Promise<any> {
     return this.teamService.addProjectTeam(addprojectteamdto);
   }
+
+  // @Post("/:teamid")
+  // async addTeammember(
+  //   @Param()teamId: number,
+  //   @Body() teammember: addTeamMemberDto
+  // ): Promise<Team> {
+  //   return this.teamService.addTeammember(teammember);
+  // }
+
 
   @Get(":id")
   findOne(@Param("id") id: string) {

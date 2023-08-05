@@ -7,7 +7,7 @@ import { BusinessService } from "src/business/business.service";
 import { BusinessTeamRepository } from "./entities/business-team.repository";
 import { BusinessTeamMemberRepository } from "src/business/entities/business-team-member.repository";
 import { UserService } from "src/user/user.service";
-import { addProjectTeamDto } from "src/project/dto/create-project.dto";
+import { addProjectTeamDto, addTeamMemberDto } from "src/project/dto/create-project.dto";
 
 @Injectable()
 export class TeamService {
@@ -16,7 +16,8 @@ export class TeamService {
     private readonly userservice: UserService,
     private readonly teamRepo: TeamRepository,
     private readonly businessTeamRepo: BusinessTeamRepository,
-    private readonly businessteammemberrepository: BusinessTeamMemberRepository
+    private readonly businessteammemberrepository: BusinessTeamMemberRepository,
+    private teammemberrepository: BusinessTeamMemberRepository
   ) {}
 
   async createTeam(createTeamDto: CreateTeamDto) {
@@ -67,6 +68,10 @@ async addProjectTeam(addprojectteamdto:addProjectTeamDto):Promise<any>{
 
 }
 
+
+// async addTeammember(teammember: addTeamMemberDto):Promise<any>{
+// let create= t
+// }
 
   findOne(id: number) {
     return `This action returns a #${id} team`;

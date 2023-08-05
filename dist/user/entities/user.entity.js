@@ -14,6 +14,7 @@ const business_team_member_entity_1 = require("../../business/entities/business-
 const business_user_entity_1 = require("../../business/entities/business-user.entity");
 const general_entity_1 = require("../../domain/general.entity");
 const user_role_entity_1 = require("../../role/entities/user-role.entity");
+const team_member_entity_1 = require("../../team/entities/team-member.entity");
 const typeorm_1 = require("typeorm");
 let User = exports.User = class User extends general_entity_1.GeneralInformation {
 };
@@ -33,6 +34,10 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => business_team_member_entity_1.BusinessTeamMember, businessteammeber => businessteammeber.user),
     __metadata("design:type", business_team_member_entity_1.BusinessTeamMember)
 ], User.prototype, "businessteammember", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => team_member_entity_1.TeamMember, teammember => teammember.user),
+    __metadata("design:type", team_member_entity_1.TeamMember)
+], User.prototype, "teammember", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)()
 ], User);

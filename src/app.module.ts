@@ -20,6 +20,7 @@ import { BusinessTeam } from './team/entities/business-team.entity';
 import { Team } from './team/entities/team.entity';
 import { BusinessTeamMember } from './business/entities/business-team-member.entity';
 import { TeamModule } from './team/team.module';
+import { TeamMember } from './team/entities/team-member.entity';
 
 @Module({
   imports: [
@@ -35,7 +36,9 @@ import { TeamModule } from './team/team.module';
       username: 'postgres',
       password: '1234', 
       database: 'project_management', 
-      entities: [User,  UserRole, Role, Permission, BusinessEntity, BusinessUser, BusinessRole, RolePermission, BusinessRole, BusinessTeam, Team, BusinessTeamMember],
+      entities: [User,  UserRole, Role,
+        TeamMember,
+        Permission, BusinessEntity, BusinessUser, BusinessRole, RolePermission, BusinessRole, BusinessTeam, Team, BusinessTeamMember],
       synchronize: true,
     }),
     UserModule,

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addProjectTeamDto = exports.ProjectTeam = exports.CreateProjectDto = void 0;
+exports.addTeamMemberDto = exports.addProjectTeamDto = exports.ProjectTeam = exports.CreateProjectDto = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CreateProjectDto {
@@ -60,4 +60,13 @@ __decorate([
     (0, class_validator_1.IsInt)({ each: true }),
     __metadata("design:type", Array)
 ], addProjectTeamDto.prototype, "projectteamId", void 0);
+class addTeamMemberDto {
+}
+exports.addTeamMemberDto = addTeamMemberDto;
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsInt)({ each: true }),
+    __metadata("design:type", Array)
+], addTeamMemberDto.prototype, "userId", void 0);
 //# sourceMappingURL=create-project.dto.js.map

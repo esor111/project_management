@@ -2,6 +2,7 @@ import { BusinessTeamMember } from 'src/business/entities/business-team-member.e
 import { BusinessUser } from 'src/business/entities/business-user.entity';
 import { GeneralInformation } from 'src/domain/general.entity';
 import { UserRole } from 'src/role/entities/user-role.entity';
+import { TeamMember } from 'src/team/entities/team-member.entity';
 import { Column, Entity, OneToMany } from 'typeorm';
 
 @Entity()
@@ -17,4 +18,8 @@ export class User extends GeneralInformation {
 
   @OneToMany(()=>BusinessTeamMember, businessteammeber=>businessteammeber.user)
   public businessteammember: BusinessTeamMember
+
+  @OneToMany(() => TeamMember, teammember=> teammember.user)
+  teammember: TeamMember;
+
 }

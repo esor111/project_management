@@ -2,7 +2,7 @@ import { IsNotEmpty } from "class-validator";
 import { Base } from "src/domain/base.entity";
 import { Column, Entity } from "typeorm";
 
-@Entity()
+@Entity() 
 export class Team extends Base {
   @Column("text", { nullable: false })
   @IsNotEmpty()

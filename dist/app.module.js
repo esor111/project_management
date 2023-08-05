@@ -29,6 +29,7 @@ const business_team_entity_1 = require("./team/entities/business-team.entity");
 const team_entity_1 = require("./team/entities/team.entity");
 const business_team_member_entity_1 = require("./business/entities/business-team-member.entity");
 const team_module_1 = require("./team/team.module");
+const team_member_entity_1 = require("./team/entities/team-member.entity");
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
@@ -46,7 +47,9 @@ exports.AppModule = AppModule = __decorate([
                 username: 'postgres',
                 password: '1234',
                 database: 'project_management',
-                entities: [user_entity_1.User, user_role_entity_1.UserRole, role_entity_1.Role, permission_entity_1.Permission, business_entity_1.BusinessEntity, business_user_entity_1.BusinessUser, business_role_entity_1.BusinessRole, role_permission_entity_1.RolePermission, business_role_entity_1.BusinessRole, business_team_entity_1.BusinessTeam, team_entity_1.Team, business_team_member_entity_1.BusinessTeamMember],
+                entities: [user_entity_1.User, user_role_entity_1.UserRole, role_entity_1.Role,
+                    team_member_entity_1.TeamMember,
+                    permission_entity_1.Permission, business_entity_1.BusinessEntity, business_user_entity_1.BusinessUser, business_role_entity_1.BusinessRole, role_permission_entity_1.RolePermission, business_role_entity_1.BusinessRole, business_team_entity_1.BusinessTeam, team_entity_1.Team, business_team_member_entity_1.BusinessTeamMember],
                 synchronize: true,
             }),
             user_module_1.UserModule,

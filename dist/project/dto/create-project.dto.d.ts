@@ -10,3 +10,6 @@ export declare class ProjectTeam {
 export declare class addProjectTeamDto {
     projectteamId: number[];
 }
+export declare class addTeamMemberDto {
+    userId: number[];
+}
