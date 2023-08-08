@@ -64,6 +64,8 @@ let TeamService = exports.TeamService = class TeamService {
     }
     async addProjectTeam(addprojectteamdto) {
     }
+    async addBusinessTeamOnly(addteamDto) {
+    }
     findOne(id) {
         return `This action returns a #${id} team`;
     }

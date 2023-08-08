@@ -13,3 +13,6 @@ export declare class TeamMemberDto {
 export declare class CreateBusinessTeamDto {
     businessteam: TeamMemberDto[];
 }
+export declare class addBusinessTeamOnlyDto {
+    userId: number[];
+}

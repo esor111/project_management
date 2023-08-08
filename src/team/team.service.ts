@@ -1,5 +1,5 @@
 import { HttpException, Injectable } from "@nestjs/common";
-import { CreateBusinessTeamDto, CreateTeamDto } from "./dto/create-team.dto";
+import { CreateBusinessTeamDto, CreateTeamDto, addBusinessTeamOnlyDto } from "./dto/create-team.dto";
 import { UpdateTeamDto } from "./dto/update-team.dto";
 import { Team } from "./entities/team.entity";
 import { TeamRepository } from "./team.repository";
@@ -65,6 +65,11 @@ export class TeamService {
   }
 
 async addProjectTeam(addprojectteamdto:addProjectTeamDto):Promise<any>{
+
+}
+
+
+async addBusinessTeamOnly(addteamDto: addBusinessTeamOnlyDto){
 
 }
 

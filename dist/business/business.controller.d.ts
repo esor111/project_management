@@ -16,7 +16,7 @@ export declare class BusinessController {
     } & import("./entities/business-user.entity").BusinessUser>;
     finallbusinessUser(): Promise<any>;
     findOneBusinessUser(userId: number, businessId: number): Promise<import("./entities/business-user.entity").BusinessUser>;
-    findAll(): Promise<import("./entities/business.entity").BusinessEntity[]>;
+    findAll(): import("typeorm").SelectQueryBuilder<import("./entities/business.entity").BusinessEntity>;
     update(id: string, updateBusinessDto: UpdateBusinessDto): string;
     findManybusinessUser(businessidesdto: businessIdesDto): Promise<import("./entities/business-user.entity").BusinessUser[]>;
     remove(id: string): string;

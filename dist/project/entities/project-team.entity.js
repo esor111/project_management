@@ -14,6 +14,7 @@ const base_entity_1 = require("../../domain/base.entity");
 const typeorm_1 = require("typeorm");
 const project_entity_1 = require("./project.entity");
 const team_entity_1 = require("../../team/entities/team.entity");
+const project_team_member_1 = require("./project-team-member");
 let ProjectTeam = exports.ProjectTeam = class ProjectTeam extends base_entity_1.Base {
 };
 __decorate([
@@ -24,6 +25,10 @@ __decorate([
     (0, typeorm_1.ManyToOne)(() => team_entity_1.Team),
     __metadata("design:type", team_entity_1.Team)
 ], ProjectTeam.prototype, "team", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => project_team_member_1.ProjectTeamMember, projectteammember => projectteammember.projectteam),
+    __metadata("design:type", project_team_member_1.ProjectTeamMember)
+], ProjectTeam.prototype, "projectteammember", void 0);
 exports.ProjectTeam = ProjectTeam = __decorate([
     (0, typeorm_1.Entity)()
 ], ProjectTeam);

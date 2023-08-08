@@ -107,7 +107,8 @@ export class BusinessService {
   }
 
   findAll() {
-    return this.businessRepo.find();
+    return this.businessRepo.createQueryBuilder("man").leftJoin("man.fam", "fam")
+
   }
 
   async findOne(id: number) {

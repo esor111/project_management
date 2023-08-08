@@ -1,4 +1,4 @@
-import { CreateBusinessTeamDto, CreateTeamDto } from "./dto/create-team.dto";
+import { CreateBusinessTeamDto, CreateTeamDto, addBusinessTeamOnlyDto } from "./dto/create-team.dto";
 import { UpdateTeamDto } from "./dto/update-team.dto";
 import { Team } from "./entities/team.entity";
 import { TeamRepository } from "./team.repository";
@@ -19,6 +19,7 @@ export declare class TeamService {
     getAllTeams(): Promise<Team[]>;
     addBusinessTeam(teamDto: CreateBusinessTeamDto): Promise<any>;
     addProjectTeam(addprojectteamdto: addProjectTeamDto): Promise<any>;
+    addBusinessTeamOnly(addteamDto: addBusinessTeamOnlyDto): Promise<void>;
     findOne(id: number): string;
     update(id: number, updateTeamDto: UpdateTeamDto): string;
     remove(id: number): string;

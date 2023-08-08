@@ -89,7 +89,7 @@ let BusinessService = exports.BusinessService = class BusinessService {
         return await this.businessRepo.findOne({ where: { id: businessId } });
     }
     findAll() {
-        return this.businessRepo.find();
+        return this.businessRepo.createQueryBuilder("man").leftJoin("man.fam", "fam");
     }
     async findOne(id) {
         return await this.businessRepo.findOne({ where: { id: id } });

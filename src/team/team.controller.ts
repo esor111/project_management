@@ -8,10 +8,10 @@ import {
   Delete,
 } from "@nestjs/common";
 import { TeamService } from "./team.service";
-import { CreateBusinessTeamDto, CreateTeamDto } from "./dto/create-team.dto";
+import { CreateBusinessTeamDto, CreateTeamDto, addBusinessTeamOnlyDto } from "./dto/create-team.dto";
 import { UpdateTeamDto } from "./dto/update-team.dto";
 import { Team } from "./entities/team.entity";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import { addProjectTeamDto, addTeamMemberDto } from "src/project/dto/create-project.dto";
 
 @ApiTags("teams")
@@ -35,6 +35,19 @@ export class TeamController {
   ): Promise<Team> {
     return this.teamService.addBusinessTeam(addteamDto);
   }
+
+  // @ApiOperation({
+  //   summary: 'used for add the business team only ',
+  // })
+  // @Post("/:businessId")
+  // async addBusinessTeamOnly(
+  //   @Body() addteamDto: addBusinessTeamOnlyDto,
+  //   @Param()businessId: number
+  // ): Promise<Team> {
+  //   return this.teamService.addBusinessTeamOnly(addteamDto);
+  // }
+
+  
 
   @Post("projectteam/:projectId")
   async addProjectTeam(

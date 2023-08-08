@@ -25,7 +25,7 @@ export declare class BusinessService {
     } & BusinessUser>;
     finallbusinessUser(): Promise<any>;
     findOneBusinessByid(businessId: number): Promise<any>;
-    findAll(): Promise<BusinessEntity[]>;
+    findAll(): import("typeorm").SelectQueryBuilder<BusinessEntity>;
     findOne(id: number): Promise<BusinessEntity>;
     update(id: number, updateBusinessDto: UpdateBusinessDto): string;
     remove(id: number): string;

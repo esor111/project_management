@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsNotEmpty } from "class-validator";
+import { IsArray, IsInt, IsNotEmpty } from "class-validator";
 
 export class CreateTeamDto {
    @ApiProperty({ description: 'The name of the team', example: 'Development Team' })
@@ -34,6 +34,16 @@ export class CreateBusinessTeamDto{
    @ApiProperty({type:[TeamMemberDto]})
    public businessteam:TeamMemberDto[]
 }
+
+
+export class addBusinessTeamOnlyDto{
+
+   @ApiProperty()
+   @IsArray()
+   @IsInt({each: true})
+   public userId: number[]
+}
+
 
 
 // export class CreateBusinessTeamDto {
